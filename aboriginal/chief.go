@@ -13,9 +13,11 @@ func (c *Chief) Run(args ...interface{}) error {
 	address := ""
 	if len(args) > 0 {
 		argSlice := args[0].([]interface{})
-		ip := argSlice[0]
-		port := argSlice[1]
-		address = ip.(string) + ":" + port.(string)
+		if len(argSlice) == 2 {
+			ip := argSlice[0]
+			port := argSlice[1]
+			address = ip.(string) + ":" + port.(string)
+		}
 	}
 	err := c.Engine.LoadConfig();
 	if err != nil {

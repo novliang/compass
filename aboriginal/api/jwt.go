@@ -5,7 +5,7 @@ import (
 	"github.com/dgrijalva/jwt-go"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"github.com/novliang/yh_user/app/service"
+	"github.com/novliang/compass/app/service"
 	"github.com/spf13/viper"
 	"strings"
 )

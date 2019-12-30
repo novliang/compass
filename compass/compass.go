@@ -3,7 +3,7 @@ package compass
 import (
 	"github.com/labstack/echo/v4"
 	myLog "github.com/labstack/gommon/log"
-	"github.com/novliang/yh_user/granary"
+	"github.com/novliang/compass/granary"
 )
 
 type Compass struct {

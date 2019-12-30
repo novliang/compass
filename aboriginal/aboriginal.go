@@ -1,7 +1,7 @@
 package aboriginal
 
 import (
-	"github.com/novliang/yh_user/aboriginal/api"
+	"github.com/novliang/compass/aboriginal/api"
 )
 
 type RoutersInjection func(engine Engine)

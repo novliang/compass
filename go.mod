@@ -1,4 +1,4 @@
-module github.com/novliang/yh_user
+module github.com/novliang/compass
 
 go 1.13
 

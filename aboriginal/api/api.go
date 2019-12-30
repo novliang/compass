@@ -3,7 +3,7 @@ package api
 import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"github.com/novliang/yh_user/utils"
+	"github.com/novliang/compass/utils"
 	"github.com/spf13/viper"
 	"net/http"
 	"os"

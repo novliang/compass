@@ -4,7 +4,7 @@ import (
 	"errors"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"github.com/novliang/yh_user/utils"
+	"github.com/novliang/compass/utils"
 	"github.com/spf13/viper"
 	"os"
 	"path/filepath"

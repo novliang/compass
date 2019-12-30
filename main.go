@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/novliang/yh_user/aboriginal"
-	"github.com/novliang/yh_user/app"
-	"github.com/novliang/yh_user/compass"
+	"github.com/novliang/compass/aboriginal"
+	"github.com/novliang/compass/app"
+	"github.com/novliang/compass/compass"
 )
 
 func main() {

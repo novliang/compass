@@ -1,6 +1,7 @@
 package api
 
 import (
+	"errors"
 	mapset "github.com/deckarep/golang-set"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/labstack/echo/v4"
@@ -45,7 +46,7 @@ func Jwt() echo.MiddlewareFunc {
 	})
 }
 
-func GenerateToken(claims *JwtCustomerClaims) (t string, err *service.ServiceError) {
+func GenerateToken(claims *JwtCustomerClaims) (t string, err error) {
 	// Create token with claims
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 	// Generate encoded token and send it as response.
@@ -54,7 +55,7 @@ func GenerateToken(claims *JwtCustomerClaims) (t string, err *service.ServiceErr
 
 	t, tokenErr := token.SignedString([]byte(jwtConfig["secret"].(string)))
 	if tokenErr != nil {
-		return "", service.NewServiceError(tokenErr.Error())
+		return "", errors.New("generate token error")
 	}
 	return
 }

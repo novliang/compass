@@ -1,6 +1,7 @@
 package api
 
 import (
+	"errors"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/novliang/compass/utils"
@@ -9,7 +10,6 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
-	"errors"
 )
 
 var ApiConfigurator *viper.Viper

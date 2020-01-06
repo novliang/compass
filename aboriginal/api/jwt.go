@@ -6,7 +6,6 @@ import (
 	"github.com/dgrijalva/jwt-go"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"github.com/spf13/viper"
 	"strings"
 )
 
@@ -18,7 +17,7 @@ type JwtCustomerClaims struct {
 }
 
 func Jwt() echo.MiddlewareFunc {
-	jwtConfig := viper.Get("jwt").(map[string]interface{})
+	jwtConfig := ApiConfigurator.GetStringMap("jwt")
 	return middleware.JWTWithConfig(middleware.JWTConfig{
 		Skipper: func(c echo.Context) bool {
 			skippers := jwtConfig["skipper"].([]interface{})

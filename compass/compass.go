@@ -12,13 +12,13 @@ type Compass struct {
 
 func New() (c *Compass) {
 	c = &Compass{Logger: myLog.New("compass")}
-	return
-}
-
-func (c *Compass) Run(s Server, args ...interface{}) {
 	err := granary.Load()
 	if err != nil {
 		c.Logger.Fatal(err)
 	}
+	return
+}
+
+func (c *Compass) Run(s Server, args ...interface{}) {
 	c.Logger.Fatal(s.Run(args));
 }

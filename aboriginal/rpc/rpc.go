@@ -14,7 +14,7 @@ import (
 var RpcConfigurator *viper.Viper
 
 type Rpc struct {
-	*grpc.Server
+	Server *grpc.Server
 }
 
 func (r *Rpc) LoadConfig() error {
@@ -57,7 +57,7 @@ func (r *Rpc) Start(address string) error {
 	if err != nil {
 		return err
 	}
-	return r.Serve(listen)
+	return r.Server.Serve(listen)
 }
 
 func Engine() interface{} {

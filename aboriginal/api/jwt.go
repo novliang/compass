@@ -10,9 +10,10 @@ import (
 )
 
 type JwtCustomerClaims struct {
-	Uid   int    `json:"uid"`
-	Name  string `json:"name"`
-	Admin bool   `json:"admin"`
+	Uid       int    `json:"uid"`
+	Name      string `json:"name"`
+	ProductId int    `json:"product_id"`
+	Admin     bool   `json:"admin"`
 	jwt.StandardClaims
 }
 

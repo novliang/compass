@@ -19,9 +19,5 @@ func (c *Chief) Run(args ...interface{}) error {
 			address = ip.(string) + ":" + port.(string)
 		}
 	}
-	err := c.Engine.LoadConfig();
-	if err != nil {
-		return err
-	}
 	return c.Engine.Start(address)
 }

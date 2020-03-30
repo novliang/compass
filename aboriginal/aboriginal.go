@@ -32,10 +32,14 @@ func NewServerByConfig(config AboriginalConfig) *Chief {
 		c.Engine = DefaultEngine().(Engine)
 	}
 
+	err := c.Engine.LoadConfig()
+	if err != nil {
+		panic(err)
+	}
+
 	if config.Routers != nil {
 		config.Routers(c.Engine)
 	}
 
 	return c
 }
-
